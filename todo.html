@@ -6,12 +6,79 @@
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
     <title>todo-list</title>
     <style>
-
+        *{
+            box-sizing : border-box;
+            margin: 0;
+            padding: 0;
+        }
+        main{
+            display: grid;
+            background-color: rgba(254, 243, 203, 1);
+            height: 100%;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            padding: 80px;
+        }
+        h1{
+            grid-column: 1/2;
+            grid-column-start: 1;
+        }
+        #container1{
+            display: flex;
+            justify-content: center;
+            width: 80%;
+            height: 100%;
+            background-color: rgba(250, 226, 140, 1);
+            grid-row: 2/7;
+            grid-column-start: 1;
+            overflow: scroll;
+        }
+        ol{
+            display: flex;
+            width: 100%;
+            overflow: scroll;
+            padding: 20px;
+            flex-direction: column;
+        }
+        li{
+            width: 100%;
+            background-color: rgba(249, 233, 201, 1);
+            padding: 20px;
+            margin: 10px;
+            list-style: none;
+        }
+        #container2{
+            width: 80%;
+            height: 100%;
+            grid-row: 2/7;
+            grid-column-start: 2;
+        }
+        #todo{
+            width: 80%;
+            height: 40px;
+        }
+        #submit{
+            background-color: rgba(174, 214, 150, 1);
+            width: 80px;
+            height: 40px;
+        }
+        html, body{
+            height: 100%;
+        }
     </style>
 </head>
 <body>
     <main>
-        
+        <h1>오늘의 할 일!</h1>
+        <div id="container1">
+            <ol id="list"></ol>
+        </div>
+        <div id="container2">
+            <form id="form">
+                <input id="todo">
+                <input id="submit" type="submit" value="추가">
+            </form>
+        </div>
     </main>
     <script src="todo.js"></script>
 </body>
